@@ -1,3 +1,5 @@
+from classes.pirate import Pirate
+
 class Ninja:
 
     def __init__( self , name ):
@@ -17,7 +19,7 @@ class Ninja:
             self.speed-=2
             print(f"Attack successful, you were quick as a ninja\n{self.name} loses two speed\n{pirate.name} loses five health\n")
         else:
-            self.health-=pirate.strength
+            pirate.attack(self)
             print(f"Attack failed, you weren't quick enough\n{self.name} loses {pirate.strength} health\n")
         return self
     def heavyAttack( self , pirate ):
@@ -26,7 +28,7 @@ class Ninja:
             self.strength-=5
             print(f"Attack successful, you were strong as a ninja\n{self.name} loses five strength\n{pirate.name} loses fifteen health\n")
         else:
-            self.health-=pirate.strength
+            pirate.attack(self)
             print(f"Attack failed, you weren't strong enough\n{self.name} loses {pirate.strength} health\n")
         return self
     def recover(self):
