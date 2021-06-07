@@ -1,9 +1,10 @@
 from classes.ninja import Ninja, Elite
 from classes.pirate import Pirate
 
+print("\nNinjas vs Pirates\n")
 character=''
 while character=='':
-    character=input('Choose your character, Michelangelo or Donatello?\n')
+    character=input('Choose your ninja, Michelangelo or Donatello?\n')
     character=character.lower()
     if character=='michelangelo':
         character=Ninja("Michelanglo")
@@ -18,6 +19,7 @@ jack_sparrow = Pirate("Jack Sparrow")
 print(f"Greetings {character.name}! Welcome to our deserted island! Feel free to explore the area!\n")
 character.show_stats()
 print("A drunken pirate appears, making fun of you. He calls himself 'Captain Jack Sparrow' though no ship or crew seem to be present. He continues stumbling towards you, saying that he's going to kill you!\n")
+jack_sparrow.show_stats()
 
 while character.health>0 and jack_sparrow.health>0:
     attack=input('Would you like to quick attack(Q) or heavy attack(H) the pirate?\n')
@@ -28,9 +30,9 @@ while character.health>0 and jack_sparrow.health>0:
     else:
         print('Not a valid command, please try again\n')
         continue
-    jack_sparrow.show_stats()
     character.recover()
     character.show_stats()
+    jack_sparrow.show_stats()
 if jack_sparrow.health<=0:
     print('You have defeated the pirate! Live long and prosper!')
 else:

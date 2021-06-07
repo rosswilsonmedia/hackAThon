@@ -17,19 +17,19 @@ class Ninja:
         if self.speed>pirate.speed:
             pirate.health-=5
             self.speed-=2
-            print(f"Attack successful, you were quick as a ninja\n{self.name} loses two speed\n{pirate.name} loses five health\n")
+            print(f"\nAttack successful, you were quick as a ninja\n{self.name} loses two speed\n{pirate.name} loses five health\n")
         else:
             pirate.attack(self)
-            print(f"Attack failed, you weren't quick enough\n{self.name} loses {pirate.strength} health\n")
+            print(f"\nAttack failed, you weren't quick enough\n{self.name} loses {pirate.strength} health\n")
         return self
     def heavyAttack( self , pirate ):
         if self.strength>pirate.strength:
             pirate.health -= 15
             self.strength-=5
-            print(f"Attack successful, you were strong as a ninja\n{self.name} loses five strength\n{pirate.name} loses fifteen health\n")
+            print(f"\nAttack successful, you were strong as a ninja\n{self.name} loses five strength\n{pirate.name} loses fifteen health\n")
         else:
             pirate.attack(self)
-            print(f"Attack failed, you weren't strong enough\n{self.name} loses {pirate.strength} health\n")
+            print(f"\nAttack failed, you weren't strong enough\n{self.name} loses {pirate.strength} health\n")
         return self
     def recover(self):
         self.speed+=1
